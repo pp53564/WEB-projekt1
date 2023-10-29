@@ -1,0 +1,64 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           Int           @id @default(autoincrement())
+  name         String
+  email        String        @unique
+  competitions Competition[]
+  Competitors  Competitors[]
+}
+
+model Competition {
+  id             Int           @id @default(autoincrement())
+  name           String
+  competitors    String
+  scoringSystem1 String?
+  scoringSystem2 String?
+  scoringSystem3 String?
+  createdBy      User          @relation(fields: [createdById], references: [id])
+  createdById    Int
+  Round          Round[]
+  Competitors    Competitors[]
+}
+
+model Round {
+  id            Int         @id @default(autoincrement())
+  roundNumber   Int
+  competition   Competition @relation(fields: [competitionId], references: [id])
+  competitionId Int
+  Match         Match[]
+}
+
+model Competitors {
+  id            Int         @id @default(autoincrement())
+  name          String
+  points        Int
+  userId        Int
+  user          User        @relation(fields: [userId], references: [id])
+  matches       Match[]
+  // Dodajte vezu prema Competition modelu
+  competition   Competition @relation(fields: [competitionId], references: [id])
+  competitionId Int
+}
+
+model Match {
+  id            Int          @id @default(autoincrement())
+  player1       String
+  player2       String
+  result1       String?
+  result2       String?
+  round         Round        @relation(fields: [roundId], references: [id])
+  roundId       Int
+  Competitors   Competitors? @relation(fields: [competitorsId], references: [id])
+  competitorsId Int?
+}

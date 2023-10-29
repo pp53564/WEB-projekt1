@@ -2,26 +2,227 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* styles.css */
+
+.form-container {
+   max-width: 500px;
+   margin: 0 auto;
+   padding: 30px;
+   background-color: #f9f9f9;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   margin-top: 150px;
+ }
+ 
+ .form-group {
+   margin-bottom: 20px;
+ }
+ 
+ .labelFrom {
+   font-weight: bold;
+   display: block;
+   margin-bottom: 8px;
+   color: #333; /* Dodana boja teksta */
+ }
+ 
+ .inputForm,
+ .textForm {
+   width: 100%;
+   padding: 12px;
+   border: 1px solid #ccc;
+   border-radius: 6px;
+   box-sizing: border-box;
+   font-size: 16px;
+   margin-bottom: 10px; /* Dodan razmak ispod polja za unos */
+ }
+ 
+ .textarea-field {
+   height: 120px;
+ }
+ 
+ .buttonForm {
+   background-color: #010708;
+   color: #fff;
+   border: none;
+   border-radius: 6px;
+   padding: 14px 28px;
+   cursor: pointer;
+   font-size: 18px;
+   margin-top: 10px;
+  margin-right: 50px;
+  margin-left: 60px;
+ }
+ 
+ .buttonForm:hover {
+   background-color: hotpink;
+ }
+ 
+
+
+
+
+
+ .page-container {
+  text-align: center;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.page-title {
+  font-size: 44px;
+  padding: 10px;
+  margin-top: 200px;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.table-container {
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.competitions-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.competitions-table th, .competitions-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.competitions-table th {
+  background-color: #ffd1d1;
+}
+
+.competitions-table a {
+  text-decoration: none;
+  color: #333;
+}
+
+
+
+.centeredTable {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+
+table {
+  border-collapse: collapse;
+  width: 70%;
+}
+
+th, td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color:#ffd1d1;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+
+.tableButton {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ffd1d1; /* Boja pozadine dugmeta */
+  color: black; /* Boja teksta dugmeta */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 650px;
+  margin-top:20px;
+}
+
+.tableButton:hover {
+  background-color: hotpink; /* Boja pozadine dugmeta na hover */
+}
+
+
+
+
+
+/* LoginPage.module.css */
+
+.containerLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.title {
+  font-size: 56px;
+  margin-bottom: 20px;
+}
+
+.button {
+  background-color: #ffd1d1;
+  color: white;
+  font-size: 25px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: hotpink;
+}
+
+.containerResults {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 20vh; /* Ensures the content takes up at least the viewport height */
+}
+
+
+.tableButtonLink {
+  background-color: #ffd1d1;
+  font-size: 10px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.tableButtonLink:hover {
+  background-color: hotpink;
+}
+
+
+.link {
+  font-size: 10px;
+}
+
+.titleTable {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tableButtonLinkTitle {
+  background-color: #ffd1d1;
+  font-size: 10px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right:10px;
 }
